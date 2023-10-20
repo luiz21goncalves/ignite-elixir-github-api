@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'bitnami/postgresql:16.0.0'
+    environment:
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRESQL_DATABASE=github_api_dev
+    ports:
+      - 5432:5432
+    volumes:
+      - 'postgres-data:/bitnami/postgresql'
+
+volumes:
+  postgres-data:
