@@ -11,6 +11,8 @@ config :github_api,
   ecto_repos: [GithubApi.Repo],
   generators: [timestamp_type: :utc_datetime]
 
+config :github_api, GithubApiWeb.ReposController, github_client_adapter: GithubApi.Github.Client
+
 # Configures the endpoint
 config :github_api, GithubApiWeb.Endpoint,
   url: [host: "localhost"],
