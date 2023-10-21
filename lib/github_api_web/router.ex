@@ -7,6 +7,8 @@ defmodule GithubApiWeb.Router do
 
   scope "/api", GithubApiWeb do
     pipe_through :api
+
+    get "/repos/:username", ReposController, :show
   end
 
   # Enable LiveDashboard in development
