@@ -53,7 +53,8 @@ defmodule GithubApi.MixProject do
       {:tesla, "~> 1.7"},
       {:hackney, "~> 1.17"},
       {:excoveralls, "~> 0.17.1", only: :test},
-      {:bypass, "~> 2.1", only: :test}
+      {:bypass, "~> 2.1", only: :test},
+      {:mox, "~> 1.1", only: :test}
     ]
   end
 
