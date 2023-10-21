@@ -28,6 +28,8 @@ defmodule GithubApiWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import GithubApiWeb.ConnCase
+
+      alias GithubApiWeb.Router.Helpers, as: Routes
     end
   end
 
