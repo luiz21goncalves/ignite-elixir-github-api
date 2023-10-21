@@ -51,7 +51,9 @@ defmodule GithubApi.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:tesla, "~> 1.7"},
-      {:hackney, "~> 1.17"},{:excoveralls, "~> 0.17.1", only: :test}
+      {:hackney, "~> 1.17"},
+      {:excoveralls, "~> 0.17.1", only: :test},
+      {:bypass, "~> 2.1", only: :test}
     ]
   end
 
