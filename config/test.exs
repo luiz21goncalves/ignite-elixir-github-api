@@ -13,6 +13,9 @@ config :github_api, GithubApi.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
+config :github_api, GithubApiWeb.ReposController,
+  github_client_adapter: GithubApi.Github.ClientMock
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :github_api, GithubApiWeb.Endpoint,

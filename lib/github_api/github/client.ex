@@ -1,12 +1,18 @@
 defmodule GithubApi.Github.Client do
-  alias Tesla.Env
   use Tesla
+
+  alias GithubApi.Github.Behavior
+  alias Tesla.Env
 
   plug Tesla.Middleware.Headers, [{"user-agent", "Tesla"}]
   plug Tesla.Middleware.JSON
 
-  def get_user_repos(username) do
-    "https://api.github.com/users/#{username}/repos"
+  @behaviour Behavior
+
+  @base_url "https://api.github.com/users/"
+
+  def get_user_repos(url \\ @base_url, username) do
+    "#{url}#{username}/repos"
     |> get()
     |> handle_get()
   end
