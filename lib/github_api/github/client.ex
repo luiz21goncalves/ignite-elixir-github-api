@@ -9,8 +9,10 @@ defmodule GithubApi.Github.Client do
 
   @behaviour Behavior
 
-  def get_user_repos(username) do
-    "https://api.github.com/users/#{username}/repos"
+  @base_url "https://api.github.com/users/"
+
+  def get_user_repos(url \\ @base_url, username) do
+    "#{url}#{username}/repos"
     |> get()
     |> handle_get()
   end
