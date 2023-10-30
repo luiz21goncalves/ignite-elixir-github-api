@@ -56,7 +56,8 @@ defmodule GithubApi.MixProject do
       {:bypass, "~> 2.1", only: :test},
       {:mox, "~> 1.1", only: :test},
       {:pbkdf2_elixir, "~> 2.0"},
-      {:ex_machina, "~> 2.7.0", only: :test}
+      {:ex_machina, "~> 2.7.0", only: :test},
+      {:faker, "~> 0.17", only: :test}
     ]
   end
 
