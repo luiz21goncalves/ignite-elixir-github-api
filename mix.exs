@@ -54,7 +54,8 @@ defmodule GithubApi.MixProject do
       {:hackney, "~> 1.17"},
       {:excoveralls, "~> 0.17.1", only: :test},
       {:bypass, "~> 2.1", only: :test},
-      {:mox, "~> 1.1", only: :test}
+      {:mox, "~> 1.1", only: :test},
+      {:pbkdf2_elixir, "~> 2.0"}
     ]
   end
 
