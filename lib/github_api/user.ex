@@ -27,8 +27,6 @@ defmodule GithubApi.User do
   end
 
   defp validate(struct, params) do
-    "#{params} oi"
-
     struct
     |> cast(params, @required_params)
     |> validate_required(@required_params)
@@ -42,6 +40,4 @@ defmodule GithubApi.User do
 
     change(changeset, %{password_hash: password_hash})
   end
-
-  defp put_password_hash(changeset), do: changeset
 end
