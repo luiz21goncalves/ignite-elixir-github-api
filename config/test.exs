@@ -26,5 +26,7 @@ config :github_api, GithubApiWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warning
 
+config :pbkdf2_elixir, :rounds, 1
+
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
