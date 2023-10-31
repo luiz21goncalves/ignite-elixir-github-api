@@ -1,6 +1,10 @@
 defmodule GithubApiWeb.ReposController do
   use GithubApiWeb, :controller
 
+  alias GithubApiWeb.FallbackController
+
+  action_fallback FallbackController
+
   def show(conn, %{"username" => username}) do
     with {:ok, raw_repos} <- client().get_user_repos(username),
          repos <- format_repos(raw_repos) do

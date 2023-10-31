@@ -3,6 +3,10 @@ defmodule GithubApiWeb.UsersController do
 
   alias GithubApi.User
 
+  alias GithubApiWeb.FallbackController
+
+  action_fallback FallbackController
+
   def create(conn, params) do
     with {:ok, %User{} = user} <- GithubApi.create_user(params) do
       conn
