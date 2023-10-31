@@ -40,4 +40,6 @@ defmodule GithubApi.User do
 
     change(changeset, %{password_hash: password_hash})
   end
+
+  defp put_password_hash(changeset), do: changeset
 end
