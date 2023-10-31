@@ -11,7 +11,7 @@ defmodule GithubApi.User do
 
   @mail_regex ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
 
-  @derive {Jason.Encoder, only: []}
+  @derive {Jason.Encoder, only: [:id, :name, :email, :inserted_at, :updated_at]}
 
   schema "users" do
     field :name, :string

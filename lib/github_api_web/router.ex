@@ -9,6 +9,8 @@ defmodule GithubApiWeb.Router do
     pipe_through :api
 
     get "/repos/:username", ReposController, :show
+
+    post "/users", UsersController, :create
   end
 
   # Enable LiveDashboard in development
