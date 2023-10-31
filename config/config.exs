@@ -13,6 +13,10 @@ config :github_api,
 
 config :github_api, GithubApiWeb.ReposController, github_client_adapter: GithubApi.Github.Client
 
+config :github_api, GithubApi.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :github_api, GithubApiWeb.Endpoint,
   url: [host: "localhost"],
