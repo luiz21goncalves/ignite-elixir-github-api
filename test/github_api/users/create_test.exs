@@ -5,14 +5,13 @@ defmodule GithubApi.Users.CreateTest do
 
   alias GithubApi.Error
   alias GithubApi.User
-  alias GithubApi.Users.Create
 
   describe "call/1" do
     test "when all params are valid, returns the user" do
       params = build(:user_params)
       %{"name" => name, "email" => email, "password" => password} = params
 
-      response = Create.call(params)
+      response = GithubApi.create_user(params)
 
       assert {:ok,
               %User{
@@ -30,7 +29,7 @@ defmodule GithubApi.Users.CreateTest do
       params =
         build(:user_params, %{"email" => "invalid email", "name" => nil, "password" => "123"})
 
-      response = Create.call(params)
+      response = GithubApi.create_user(params)
 
       expected_response = %{
         name: ["can't be blank"],
