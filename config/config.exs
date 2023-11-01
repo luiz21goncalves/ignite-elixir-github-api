@@ -17,6 +17,11 @@ config :github_api, GithubApi.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
+# Guardian
+config :github_api, GithubApiWeb.Auth.Guardian,
+  issuer: "github_api",
+  secret_key: "ssWQF3Z2LzZph4yvS8YpiyRafE4nZDU2Dh7RK/zgRA88TbpTqoBp3c8EWItX8JSv"
+
 # Configures the endpoint
 config :github_api, GithubApiWeb.Endpoint,
   url: [host: "localhost"],
