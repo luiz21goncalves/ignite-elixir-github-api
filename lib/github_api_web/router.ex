@@ -1,18 +1,28 @@
 defmodule GithubApiWeb.Router do
   use GithubApiWeb, :router
 
+  alias GithubApiWeb.Auth.Pipeline
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  pipeline :auth do
+    plug Pipeline
   end
 
   scope "/api", GithubApiWeb do
     pipe_through :api
 
-    get "/repos/:username", ReposController, :show
-
     post "/users", UsersController, :create
 
     post "/auth/login", SessionController, :create
+  end
+
+  scope "/api", GithubApiWeb do
+    pipe_through [:api, :auth]
+
+    get "/repos/:username", ReposController, :show
   end
 
   # Enable LiveDashboard in development
