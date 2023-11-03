@@ -11,6 +11,8 @@ defmodule GithubApiWeb.Router do
     get "/repos/:username", ReposController, :show
 
     post "/users", UsersController, :create
+
+    post "/auth/login", SessionController, :create
   end
 
   # Enable LiveDashboard in development
